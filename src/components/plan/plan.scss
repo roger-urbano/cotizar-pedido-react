@@ -1,0 +1,47 @@
+@import '../../assets/scss/variables';
+
+.plan {
+    display: flex;
+    align-items: center;
+    border: 2px solid $color-gray;
+    width: 23%;
+    max-width: 120px;
+    border-radius: 10px;
+    padding: 20px 10px 10px 10px;
+    position: relative;
+    cursor: pointer;
+    &.active {
+        border-color: $color-2;
+    }
+
+    .icon-done {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+}
+
+
+.plan--payment {
+    font-size: 12px;
+}
+.plan--type {
+    font-size: 12px;
+}
+.plan--type {
+    text-transform: uppercase;
+}
+
+.plan--amount {
+    font-size: 28px;
+    font-weight: 500;
+
+    .plan--coin {
+        font-size: 12px;
+        vertical-align: super;
+    }
+}
+
+
+
+

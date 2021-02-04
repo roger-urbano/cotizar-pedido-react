@@ -1,0 +1,26 @@
+@import '../../assets/scss/variables';
+
+.steps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.steps--img {
+    width: 20px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}
+
+.steps--text {
+    color: $color-text;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    .steps--text-bold {
+        color: $color-1;
+    }
+}

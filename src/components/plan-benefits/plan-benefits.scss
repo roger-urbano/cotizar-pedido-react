@@ -1,0 +1,72 @@
+@import '../../assets/scss/variables';
+
+.benefits--card {
+    border-radius: 6px;
+    border: 2px solid $color-gray-light;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.benefits--head  {
+    background-color: $color-gray-light;
+    color: $color-text;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.benefits--body {
+    padding: 15px 20px;
+}
+
+.benefits--info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom:1px solid $color-gray-light;
+}
+
+.benefits--coberture {
+    small {
+        font-size: 13px;
+        color: $color-text;
+    }
+    h5 {
+        font-size: 30px;
+        color: $color-text;
+    }
+}
+
+.benefits--figure {
+    width: 120px;
+    margin: 0;
+    border-left:1px solid $color-gray-light;
+    padding: 15px 10px 15px 30px;
+}
+
+.benefits--img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.benefits--list {
+    padding: 15px 0;
+    list-style: none;
+}
+
+.benefits--item {
+    font-size: 14px;
+    line-height: 2;
+    &.benefits--item-disabled {
+        color: $color-text-muted;
+        text-decoration: line-through;
+    }
+
+    strong {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

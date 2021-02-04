@@ -1,0 +1,25 @@
+@import '../../assets/scss/variables';
+
+.title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.title--default {
+    font-size: 30px;
+    color: $color-text;
+    font-weight: 300;
+    margin-bottom: 0.25em;
+}
+
+.title--default-bold {
+    color: $color-1;
+    font-weight: 700;
+}
+
+.title--description {
+    font-size: 15px;
+    color: $color-text-light;
+    font-weight: 300;
+}
+

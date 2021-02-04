@@ -1,0 +1,104 @@
+/* GRID SYSTEM */
+$cols       :   12;
+$gap        :   24px;
+
+.grid--container {
+    width: calc(100% - $gap);
+    margin: 0 auto;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+    height: auto;
+    max-width: 1200px;
+    // border: 1px solid #c553a3!important;
+}
+
+.grid--container-full {
+    @extend .grid--container;
+    width: 100%;
+    max-width: inherit;
+}
+
+.grid--row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $gap / -2;
+    margin-right: $gap / -2;
+
+    &.grid--row-full {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        [class*="column-"],
+        .column { 
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+}
+
+[class*="column-"],
+.column{
+    width: 100%;
+    max-width: 100%;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+@mixin grid-system($mq){
+    /*columnas iguales .column*/
+    .#{ $mq }{
+        flex: 1 0 0;
+    }
+    
+    /*Iterar .column */
+    @for $col from 1 through $cols{
+        .#{ $mq }-#{ $col }{
+            flex: 0 0 (100% / $cols) * $col;
+            max-width: (100% / $cols) * $col;
+        }
+    }
+}
+
+@include grid-system(grid--col);
+
+
+/* Responsive column*/
+@media screen and (min-width: 375px){
+    @include grid-system(grid--col-xs)
+}
+
+@media screen and (min-width: 560px){
+    @include grid-system(grid--col-sm)
+}
+
+@media screen and (min-width: 768px){
+    @include grid-system(grid--col-md)
+}
+
+@media screen and (min-width: 1024px){
+    @include grid-system(grid--col-lg)
+}
+
+@media screen and (min-width: 1140px){
+    @include grid-system(grid--col-xl)
+}
+
+/* FOR EXAMPLE */
+.column-ex{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    // display: grid;
+    place-items: center;
+    border: 1px solid #c553a3!important;
+}
+
+.bordev{
+    border: 1px solid #c553a3!important;
+}
+
+/* Layouts */
+.wrap--forms {
+    width: 100%;
+    max-width: 400px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}

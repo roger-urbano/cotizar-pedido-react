@@ -1,0 +1,42 @@
+
+/* Body main style*/
+body {
+    line-height: 1;
+    scroll-behavior: smooth;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+/*  All elements border-box */
+*,
+*:before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Root element font size No default margins and paddings */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* root elements display block */
+html,
+body {
+    display: block;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

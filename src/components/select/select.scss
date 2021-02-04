@@ -1,0 +1,36 @@
+@import '../../assets/scss/variables';
+
+.select--set {
+  border: 1px solid $color-gray;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 5px 16px;
+//   margin-bottom: 25px;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+
+  .select--label {
+    color: $color-text-muted;
+    // font-family: 'lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .select--field {
+    border: none;
+    border-radius: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+  }
+}

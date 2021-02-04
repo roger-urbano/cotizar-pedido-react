@@ -1,0 +1,36 @@
+.bordered {
+    border: 1px solid $color-text;
+}
+
+
+/* Padding x y*/
+$paddings: 4;
+$spacing: 12px;
+
+@mixin  mixin-padding-x($padding-x){
+    /*Iterar .column */
+    @for $padding from 1 through $paddings{
+        .#{ $padding-x }-#{ $padding }{
+            padding-left: $spacing * $padding;
+            padding-right: $spacing * $padding;
+        }
+    }
+}
+@include mixin-padding-x(padding-x);
+
+
+@mixin  mixin-padding-y($padding-y){
+    /*Iterar .column */
+    @for $padding from 1 through $paddings{
+        .#{ $padding-y }-#{ $padding }{
+            padding-top: $spacing * $padding;
+            padding-bottom: $spacing * $padding;
+        }
+    }
+}
+
+@include mixin-padding-x(padding-y);
+
+.label {
+    font-size: 14px;
+}

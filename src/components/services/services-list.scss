@@ -1,0 +1,20 @@
+@import '../../assets/scss/variables';
+
+.services--title {
+    padding: 10px 20px;
+    border-bottom: 1px solid $color-gray-light;
+    border-top: 1px solid $color-gray-light;
+    color: $color-text;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.active {
+        // color: $color-1;
+        font-weight: 500;
+    }
+}
+
+.services--content {
+    padding: 10px 20px;
+}
