@@ -53,7 +53,7 @@ const UserInformation = () => {
       };
 
     return (
-        <div className="padding-x-2 information">
+        <div className="information">
             <Steps
                 stepsTotal={5}
                 step={1}
@@ -63,9 +63,8 @@ const UserInformation = () => {
                 titleBold={"Pepito"}
                 indication={"Valida que los datos sean correctos"}
             />
-            {JSON.stringify(dataUser)}
             <form>
-            <h6>Datos personales del títular</h6>
+            <h6 className="padding-x-1">Datos personales del títular</h6>
                 <div className="grid--container">
                     <div className="grid--row">
                     <div className="grid--col-sm-12 mb-3">
@@ -123,7 +122,7 @@ const UserInformation = () => {
                                 id="date"
                                 name="date"
                                 value=""
-                                type="date"
+                                type="text"
                             />
                         </div>
                         <div className="grid--col-sm-12 mb-3">

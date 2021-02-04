@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
   Redirect,
-  HashRouter
 } from "react-router-dom";
 
 import Header from './components/header/header';
@@ -16,7 +15,7 @@ import Thankyou from './pages/Thankyou';
 function App() {
   return (
     <Router>
-      <div className="grid--container-full login">
+      <div className="grid--container-full login px-0">
         <div className="grid--row grid--row-full">
             <div className="grid--col-xs-12 grid--col-sm-7">
                 <Header/>

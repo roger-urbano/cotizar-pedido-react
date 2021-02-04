@@ -1,13 +1,4 @@
 
-/* Body main style*/
-body {
-    line-height: 1;
-    scroll-behavior: smooth;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Lato', sans-serif;
-}
-
 /*  All elements border-box */
 *,
 *:before,
@@ -21,6 +12,12 @@ html,
 body {
     margin: 0;
     padding: 0;
+    color: $color-text;
+}
+strong,
+small,
+li {
+  color: inherit;
 }
 
 /* root elements display block */

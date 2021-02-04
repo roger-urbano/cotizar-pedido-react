@@ -32,10 +32,10 @@ const ChooseProtection = () => {
     }, [pathname]);
 
     const [dataPlan, setDataPlan] = useState([
-        {typePlan: 'Básico', amount: 200, typePayment: 'Mensual', id: 1},
-        {typePlan: 'Intermedio', amount: 260, typePayment: 'Mensual', id: 2},
-        {typePlan: 'Básico', amount: 120, typePayment: 'Quincenal', id: 3},
-        {typePlan: 'Premium', amount: 360, typePayment: 'Mensual', id: 4},
+        {typePlan: 'Básico', amount: 160, typePayment: 'Mensual', id: 1},
+        {typePlan: 'Intermedio', amount: 220, typePayment: 'Mensual', id: 2},
+        {typePlan: 'Premium', amount: 300, typePayment: 'Mensual', id: 4},
+        {typePlan: 'Gold', amount: 360, typePayment: 'Mensual', id: 3},
     ]);
 
     const [dataServices, setDataServices] = useState([
@@ -68,7 +68,7 @@ const ChooseProtection = () => {
       }
 
     return (
-        <div className="padding-x-2 information">
+        <div className="information">
             <Steps
                 stepsTotal={5}
                 step={1}

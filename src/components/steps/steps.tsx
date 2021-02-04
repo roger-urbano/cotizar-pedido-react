@@ -2,6 +2,7 @@ import React from 'react';
 import LeftArow from '../../assets/images/left-arrow.png'
 import './steps.scss';
 import { useHistory } from "react-router-dom";
+import { BackIcon } from '../../assets/svgs/back';
 
 interface StepsProps {
     stepsTotal: number;
@@ -15,7 +16,7 @@ const Steps: React.FC<StepsProps> = ({ stepsTotal, step }) => {
     
    return (
         <div className="steps"  onClick={() => { history.goBack() }}>
-            <img className="steps--img" src={LeftArow} alt=""/>
+            <BackIcon className="mr-2"/>
             <p className="steps--text">
                 <span className="steps--text-bold">PASO {step} </span> DE {stepsTotal} 
             </p>

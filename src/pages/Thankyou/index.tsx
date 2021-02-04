@@ -17,7 +17,7 @@ const Thankyou = () => {
             <div className="thankyou--content">
                 <Title 
                     titleLight="!Gracias por"
-                    titleBold="confiar en nostros"
+                    titleBold="confiar en nostros!"
                     indication="Queremso conocer mejor la salud de los asegurados un asesor se pondra en contacto contigo en las siguietes 40 horas "  
                 />
                 <div className="text-right">

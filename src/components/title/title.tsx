@@ -10,7 +10,7 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ titleLight, titleBold, indication }) => {
     return (
-        <div className="title">
+        <div className="title padding-x-1">
             <h2 className="title--default">{titleLight} <strong className="title--default-bold">{titleBold}</strong></h2>
             <p className="title--description">{indication}</p>
         </div>
