@@ -106,7 +106,7 @@ const ChooseProtection = () => {
                             ))}
                         </div>
                         <div className="grid--col-sm-12 mb-3 mt-5 d-flex justify-content-between">
-                        <Link to="/about" className="text-secondary">Enviar cotización por correo</Link>
+                        <span className="text-secondary cursor-pointer">Enviar cotización por correo</span>
                          <ButtonToggle color="primary" 
                             onClick={handleClick}
                         >Comprar plan</ButtonToggle>

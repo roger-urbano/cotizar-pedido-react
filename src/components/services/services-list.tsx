@@ -11,7 +11,7 @@ export const ServicesList = ( props: any ) => (
     { 
       props.active ? (
         <div className="services--content toggable_content">
-          { props.children }
+          <p>{ props.children }</p>
         </div>
       ) : null
     }

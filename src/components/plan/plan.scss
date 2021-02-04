@@ -10,6 +10,8 @@
     padding: 20px 10px 10px 10px;
     position: relative;
     cursor: pointer;
+
+    &:hover,
     &.active {
         border-color: $color-2;
     }
