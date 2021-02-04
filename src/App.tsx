@@ -15,7 +15,7 @@ import Thankyou from './pages/Thankyou';
 
 function App() {
   return (
-    <HashRouter basename='/'>
+    <Router>
       <div className="grid--container-full login">
         <div className="grid--row grid--row-full">
             <div className="grid--col-xs-12 grid--col-sm-7">
@@ -46,7 +46,7 @@ function App() {
             </div>
         </div>
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 

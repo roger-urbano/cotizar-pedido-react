@@ -63,6 +63,7 @@ const UserInformation = () => {
                 titleBold={"Pepito"}
                 indication={"Valida que los datos sean correctos"}
             />
+            {JSON.stringify(dataUser)}
             <form>
             <h6>Datos personales del títular</h6>
                 <div className="grid--container">
