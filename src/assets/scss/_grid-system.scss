@@ -1,15 +1,14 @@
 /* GRID SYSTEM */
-$cols       :   12;
-$gap        :   24px;
+$cols: 12;
+$gap: 24px;
 
 .grid--container {
-    width: calc(100% - $gap);
+    width: calc(100% - #{$gap});
     margin: 0 auto;
     padding-left: $gap / 2;
     padding-right: $gap / 2;
     height: auto;
     max-width: 1200px;
-    // border: 1px solid #c553a3!important;
 }
 
 .grid--container-full {
@@ -59,7 +58,6 @@ $gap        :   24px;
 }
 
 @include grid-system(grid--col);
-
 
 /* Responsive column*/
 @media screen and (min-width: 375px){
