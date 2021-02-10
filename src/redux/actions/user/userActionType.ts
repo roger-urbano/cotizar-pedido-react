@@ -12,6 +12,7 @@ export type UserType = {
         id?: number,
         first_name?: string,
         last_name?: string,
+        sur_name?: string,
         full_name?: string,
         email?: any,
         document_number?: number,

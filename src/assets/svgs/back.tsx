@@ -1,6 +1,6 @@
 import React from 'react';
 // stroke='currentColor'
-export const BackIcon  = ({color = '#2f80ed', width = 24, height = 24, className = ''}) => {
+export const BackIcon  = ({color = '#EF3340', width = 24, height = 24, className = ''}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
 	 viewBox="0 0 24 24" width={width} height={height} className={className}>

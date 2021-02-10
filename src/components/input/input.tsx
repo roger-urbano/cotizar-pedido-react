@@ -9,9 +9,10 @@ interface InputProps {
     type: any;
     name: string;
     style?: any;
+    innerRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement>;
 }
 
-const Input: React.FC<InputProps> = ({ label, value, id, type, name, style }) => {
+const Input: React.FC<InputProps> = ({ label, value, id, type, name, style, innerRef }) => {
    return (
     <div className="input--set" style={{ ...style }}>
         <Label for={id} className="input--label">
@@ -23,6 +24,7 @@ const Input: React.FC<InputProps> = ({ label, value, id, type, name, style }) =>
             type={type ? type : "text"}
             id={id}
             value={value}
+            innerRef={innerRef}
         />
     </div>
    )

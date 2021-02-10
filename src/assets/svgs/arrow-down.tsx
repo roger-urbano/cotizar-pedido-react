@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ArrowDownIcon  = ({color = '#2f80ed', width = 16, height = 16, className = ''}) => {
+export const ArrowDownIcon  = ({color = '#EF3340', width = 16, height = 16, className = ''}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
 	 viewBox="0 0 24 24" width={width} height={height} className={className}>

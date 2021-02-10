@@ -10,21 +10,21 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStore } from '../../redux/store';
 import { getUserAction } from '../../redux/actions/user/userAction';
-// import { detailAction } from '../../redux/actions/userAction';
-
+import moment from "moment";
 
 interface DocumentProps {
     id: number;
     name: string;
 }
 
-
 const UserInformation = () => {
 
     const [typeDocument, setTypeDocument] = useState<number | undefined>();
     const [numberDoc, setNumberDoc] = useState<number>();
     const [isLoading, setIsLoading] = useState(Boolean);
-    const [nameUser, setNameUser] = useState<string | undefined>("");
+    const [firstName, setFirstName] = useState<string | undefined>("");
+    const [lastName, setLastName] = useState<string | undefined>("");
+    const [surName, setSurName] = useState<string | undefined>("");
 
     const dataUser = useSelector((state: RootStore) => state.userReducer);
 
@@ -47,7 +47,9 @@ const UserInformation = () => {
 
     useEffect(() => {
         setIsLoading(dataUser?.loading);
-        setNameUser(dataUser?.user?.first_name);
+        setFirstName(dataUser?.user?.first_name);
+        setLastName(dataUser?.user?.last_name);
+        setSurName(dataUser?.user?.sur_name);
         setTypeDocument(dataUser?.user?.type_doc);
         setNumberDoc(dataUser.user?.document_number);
     }, [dataUser])
@@ -76,7 +78,7 @@ const UserInformation = () => {
 
             <Title 
                 titleLight={"Hola"}
-                titleBold={nameUser}
+                titleBold={firstName}
                 indication={"Valida que los datos sean correctos"}
             />
             <form>
@@ -98,7 +100,7 @@ const UserInformation = () => {
                                 label="Nro Documento"
                                 id="nro_document"
                                 name="nro_document"
-                                value={numberDoc}
+                                value={dataUser?.user?.document_number}
                                 type="text"
                                 style={{ width: '100%', color: 'red'}}
                             />
@@ -110,7 +112,7 @@ const UserInformation = () => {
                                 label="Nombre"
                                 id="first_name"
                                 name="first_name"
-                                value=""
+                                value={dataUser?.user?.first_name}
                                 type="text"
                             />
                         </div>
@@ -119,7 +121,7 @@ const UserInformation = () => {
                                 label="Apellido paterno"
                                 id="last_name"
                                 name="first_name"
-                                value=""
+                                value={dataUser?.user?.last_name}
                                 type="text"
                             />
                         </div>
@@ -128,7 +130,7 @@ const UserInformation = () => {
                                 label="Apellido materno"
                                 id="first_name"
                                 name="first_name"
-                                value=""
+                                value={dataUser?.user?.sur_name}
                                 type="text"
                             />
                         </div>
@@ -137,7 +139,7 @@ const UserInformation = () => {
                                 label="Fecha de Nacimiento"
                                 id="date"
                                 name="date"
-                                value=""
+                                value={moment(dataUser?.user?.date_birth).format("DD-MM-YYYY")}
                                 type="text"
                             />
                         </div>
@@ -145,13 +147,13 @@ const UserInformation = () => {
                             <h6>Género</h6>
                             <FormGroup check>
                                 <Label check className="label">
-                                    <InputCheck type="radio" name="radio1" />
+                                    <InputCheck type="radio" name="radio1" checked={dataUser?.user?.gender === 1 ? true : false}/>
                                     Masculino
                                 </Label>
                             </FormGroup>
                             <FormGroup check>
                                 <Label check className="label">
-                                    <InputCheck type="radio" name="radio1" />
+                                    <InputCheck type="radio" name="radio1" checked={dataUser?.user?.gender === 2 ? true : false}/>
                                     Femenino
                                     </Label>
                             </FormGroup>
@@ -160,13 +162,13 @@ const UserInformation = () => {
                             <h6>¿A quién vamos a asegurar?</h6>
                             <FormGroup check>
                                 <Label check className="label">
-                                    <InputCheck type="radio" name="radio2" />
+                                    <InputCheck type="radio" name="radio_security" />
                                     Sólo a mi
                                 </Label>
                             </FormGroup>
                             <FormGroup check>
                                 <Label check className="label">
-                                    <InputCheck type="radio" name="radio2" />
+                                    <InputCheck type="radio" name="radio_security" />
                                      A mi familia
                                     </Label>
                             </FormGroup>

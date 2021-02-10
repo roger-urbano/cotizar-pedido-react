@@ -13,9 +13,10 @@ interface SelectProps {
     onChange: (event: any) => void;
     name: string;
     style?: any;
+    ref?: ((instance: HTMLSelectElement | null) => void) | React.RefObject<HTMLSelectElement> | null | undefined
 }
 
-const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearance, onChange, name, style }) => {
+const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearance, onChange, name, style, ref }) => {
 
     return (
       <div className="select--set">
@@ -31,7 +32,7 @@ const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearan
             value={value}
             id={id}
             onChange={onChange}
-            // ref={ref}
+            ref={ref}
           >
             <option value="">Seleccione</option>
             {data?.map((item, index) => (
