@@ -3,7 +3,7 @@ import './title.scss';
 
 
 interface TitleProps {
-    titleLight: string;
+    titleLight?: string;
     titleBold?: string;
     indication?: string;
 }

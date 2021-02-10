@@ -4,8 +4,6 @@ import { ButtonToggle} from 'reactstrap';
 import './index.scss'
 import { useHistory } from "react-router-dom";
 
-
-
 const Thankyou = () => {
 
     const history = useHistory();

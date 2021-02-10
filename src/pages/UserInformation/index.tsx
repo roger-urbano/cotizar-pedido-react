@@ -7,7 +7,10 @@ import { useHistory } from "react-router-dom";
 import './index.scss';
 import Steps from '../../components/steps/steps';
 import { useLocation } from "react-router-dom";
-import Axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootStore } from '../../redux/store';
+import { getUserAction } from '../../redux/actions/user/userAction';
+// import { detailAction } from '../../redux/actions/userAction';
 
 
 interface DocumentProps {
@@ -15,10 +18,16 @@ interface DocumentProps {
     name: string;
 }
 
+
 const UserInformation = () => {
 
-    const [typeDocument, setTypeDocument] = useState("");
-    const [dataUser, setDataUser] = useState<any>([]);
+    const [typeDocument, setTypeDocument] = useState<number | undefined>();
+    const [numberDoc, setNumberDoc] = useState<number>();
+    const [isLoading, setIsLoading] = useState(Boolean);
+    const [nameUser, setNameUser] = useState<string | undefined>("");
+
+    const dataUser = useSelector((state: RootStore) => state.userReducer);
+
     const [listDocument, setListDocument] = useState<DocumentProps[]>([
         {id: 1, name: "DNI"},
         {id: 2, name: "Pasaporte"},
@@ -26,25 +35,31 @@ const UserInformation = () => {
 
     const history = useHistory();
     const { pathname } = useLocation();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
     useEffect(() => {
-        Axios.get<any[]>(`https://jsonplaceholder.typicode.com/users`).then(response => {
-            const users = response.data
-            setDataUser(users)
-      })
-      console.log(dataUser);
+        dispatch(getUserAction())
     }, []);
 
+    useEffect(() => {
+        setIsLoading(dataUser?.loading);
+        setNameUser(dataUser?.user?.first_name);
+        setTypeDocument(dataUser?.user?.type_doc);
+        setNumberDoc(dataUser.user?.document_number);
+    }, [dataUser])
+
+   
     const handleClick = () => {
         history.push("/protection");
     }
 
     const onChangeValueInput = (event: any) => {
         const { id, value } = event.target;
+        
         switch (id) {
           case "type_document":
             setTypeDocument(value);
@@ -57,10 +72,11 @@ const UserInformation = () => {
             <Steps
                 stepsTotal={5}
                 step={1}
-            />
+            />          
+
             <Title 
                 titleLight={"Hola"}
-                titleBold={"Pepito"}
+                titleBold={nameUser}
                 indication={"Valida que los datos sean correctos"}
             />
             <form>
@@ -77,14 +93,14 @@ const UserInformation = () => {
                                 field="name"
                                 onChange={onChangeValueInput}
                                 style={{ width: '100px' }}
-                            />                            
+                            />
                             <Input 
                                 label="Nro Documento"
                                 id="nro_document"
                                 name="nro_document"
-                                value=""
-                                type="number"
-                                style={{ width: '100%'}}
+                                value={numberDoc}
+                                type="text"
+                                style={{ width: '100%', color: 'red'}}
                             />
                         </div>
                     </div>

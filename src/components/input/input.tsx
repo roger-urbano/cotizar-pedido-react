@@ -22,6 +22,7 @@ const Input: React.FC<InputProps> = ({ label, value, id, type, name, style }) =>
             name={name}
             type={type ? type : "text"}
             id={id}
+            value={value}
         />
     </div>
    )
