@@ -11,15 +11,17 @@ const Thankyou = () => {
         history.push("/login");
     }
     return (
-        <div className="thankyou">
-            <div className="thankyou--content">
-                <Title 
-                    titleLight="!Gracias por"
-                    titleBold="confiar en nostros!"
-                    indication="Queremso conocer mejor la salud de los asegurados un asesor se pondra en contacto contigo en las siguietes 40 horas "  
-                />
-                <div className="text-right">
-                <ButtonToggle color="primary" onClick={handleClick}>Comprar plan</ButtonToggle>
+        <div className="grid--col-xs-12 grid--col-sm-9">
+            <div className="thankyou">
+                <div className="thankyou--content">
+                    <Title 
+                        titleLight="!Gracias por"
+                        titleBold="confiar en nostros!"
+                        indication="Queremso conocer mejor la salud de los asegurados un asesor se pondra en contacto contigo en las siguietes 40 horas "  
+                    />
+                    <div className="text-right">
+                    <ButtonToggle color="primary" onClick={handleClick}>Comprar plan</ButtonToggle>
+                    </div>
                 </div>
             </div>
         </div>

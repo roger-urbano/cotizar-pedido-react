@@ -4,6 +4,13 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    position: relative;
+}
+
+.header--logo {
+    position: absolute;
+    top: 20px;
+    left: 90px;
 }
 .header--left {
     background-color: $color-1;
@@ -14,6 +21,7 @@
     flex-direction: column;
     padding-left: 80px;
     // display: none;
+    padding-top: 90px;
 }
 
 .header--title {
@@ -59,11 +67,18 @@
     color: #fff;
 }
 
-.header--image {
+.header--figure {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 60px;
     margin: 0;
+    width: 300px;
+}
+.header--img-family {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
 }
 
 .header--item-icon {

@@ -3,6 +3,7 @@ import imgBase from '../../assets/images/Base.png';
 import imgMobile from '../../assets/images/gl_mobile-20x20.png';
 import imgShield from '../../assets/images/gl_shield-20x20.png';
 import imgFamily from '../../assets/images/family.png';
+import imglogo from '../../assets/images/logo-rimac.png';
 import './header.scss';
 import { useLocation } from 'react-router-dom';
  
@@ -35,6 +36,7 @@ const Header = () => {
     return (
         <div  className={`grid--col-xs-12  ${location.pathname === "/login" ? 'grid--col-sm-7' : 'grid--col-sm-4' }`}>
             <div className="header">
+                <img  className="header--logo"src={imglogo} alt=""/>
                 { location.pathname === "/login" ? 
                     <div className="header--left">
                         <h1 className="header--title">Seguro de 
@@ -52,8 +54,8 @@ const Header = () => {
                 } 
                 <div className="header--right">
                     <img className="header--background" src={imgBase} alt=""/>
-                        <figure className="header--image">
-                            <img className="header--image-family" src={imgFamily} alt=""/>
+                        <figure className="header--figure">
+                            <img className="header--img-family" src={imgFamily} alt=""/>
                         </figure>
                 </div>
             </div>

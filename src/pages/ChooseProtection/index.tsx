@@ -18,7 +18,9 @@ const ChooseProtection = () => {
 
     const [typeDocument, setTypeDocument] = useState("");
     const [idPlan, setIdPlan] = useState(null)
-    const [indexActive, setIndexActive] =useState(-1)
+    const [typePlan, setTypePlan] = useState<string>("");
+    const [typePlanId, setTypePlanId] = useState<number>(1)
+    const [indexActive, setIndexActive] =useState(0)
     const [activeService, setActiveService] = useState(null)
     const { pathname } = useLocation();
 
@@ -33,9 +35,9 @@ const ChooseProtection = () => {
 
     const [dataPlan, setDataPlan] = useState([
         {typePlan: 'Básico', amount: 160, typePayment: 'Mensual', id: 1},
-        {typePlan: 'Intermedio', amount: 220, typePayment: 'Mensual', id: 2},
-        {typePlan: 'Premium', amount: 300, typePayment: 'Mensual', id: 4},
-        {typePlan: 'Gold', amount: 360, typePayment: 'Mensual', id: 3},
+        {typePlan: 'Avanzado', amount: 200, typePayment: 'Mensual', id: 2},
+        {typePlan: 'Premium', amount: 250, typePayment: 'Mensual', id: 3},
+        {typePlan: 'Full', amount: 500, typePayment: 'Mensual', id: 4},
     ]);
 
     const [dataServices, setDataServices] = useState([
@@ -58,9 +60,14 @@ const ChooseProtection = () => {
         }
       };
 
-      const onActivePlan = (id: any, index: number) => {
+      const onActivePlan = (id: any, index: number, typePlan: string) => {
         setIdPlan(idPlan === id ? null : id );
         setIndexActive(indexActive === index ? -1 : index)
+        setTypePlanId(id)
+        if (idPlan === id) {
+            setTypePlanId(0)
+        }
+        setTypePlan(typePlan)
       }
 
       const onActiveService = (index: any) => {
@@ -68,52 +75,54 @@ const ChooseProtection = () => {
       }
 
     return (
-        <div className="information">
-            <Steps
-                stepsTotal={5}
-                step={1}
-            />
-            <Title 
-                titleLight={"Elige"}
-                titleBold={"tu protección"}
-                indication={"Selecciona tu plan de Salud"}
-            />
-            <form>
-                <div className="grid--container">
-                    <div className="grid--row">
-                        <div className="grid--col-sm-12 mb-3 set--plans">
-                            {  dataPlan.map((plan, index) => (
-                                <Plan  
-                                    typePlan={plan.typePlan} 
-                                    amount={plan.amount} 
-                                    typePayment={plan.typePayment}
-                                    id={plan.id}
-                                    index= {index}
-                                    indexActive={indexActive}
-                                    handleActive={()=>onActivePlan(plan.id, index)}
-                                />
-                                )
-                            )}
-                            <PlanBenefits/>
-                        </div>
-                        <div className="grid--col-sm-12">
-                            <div className="mb-3">
-                                <h6 className="mb-1">Revisa nuestros </h6>
-                                <span className="text-danger">Servicios y Exclusiones</span> 
+        <div className="grid--col-xs-12 grid--col-sm-8">
+            <div className="information">
+                <Steps
+                    stepsTotal={5}
+                    step={1}
+                />
+                <Title 
+                    titleLight={"Elige"}
+                    titleBold={"tu protección"}
+                    indication={"Selecciona tu plan de Salud"}
+                />
+                <form>
+                    <div className="grid--container">
+                        <div className="grid--row">
+                            <div className="grid--col-sm-12 mb-3 set--plans">
+                                {  dataPlan.map((plan, index) => (
+                                    <Plan  
+                                        typePlan={plan.typePlan} 
+                                        amount={plan.amount} 
+                                        typePayment={plan.typePayment}
+                                        id={plan.id}
+                                        index= {index}
+                                        indexActive={indexActive}
+                                        handleActive={()=>onActivePlan(plan.id, index, plan.typePlan)}
+                                    />
+                                    )
+                                )}
+                                <PlanBenefits typePlanId={typePlanId} typePlan={typePlan}/>
                             </div>
-                            { dataServices.map((service, index) => (
-                                <ServicesList title={service.title} active={activeService === index} onActiveService={()=> onActiveService(index)}> {service.despription} </ServicesList> 
-                            ))}
-                        </div>
-                        <div className="grid--col-sm-12 mb-3 mt-5 d-flex justify-content-between">
-                        <span className="text-secondary cursor-pointer">Enviar cotización por correo</span>
-                         <ButtonToggle color="danger" 
-                            onClick={handleClick}
-                        >Comprar plan</ButtonToggle>
+                            <div className="grid--col-sm-12">
+                                <div className="mb-3">
+                                    <h6 className="mb-1">Revisa nuestros </h6>
+                                    <span className="text-danger">Servicios y Exclusiones</span> 
+                                </div>
+                                { dataServices.map((service, index) => (
+                                    <ServicesList title={service.title} active={activeService === index} onActiveService={()=> onActiveService(index)}> {service.despription} </ServicesList> 
+                                ))}
+                            </div>
+                            <div className="grid--col-sm-12 mb-3 mt-5 d-flex justify-content-between">
+                            <span className="text-secondary cursor-pointer">Enviar cotización por correo</span>
+                            <ButtonToggle color="danger" disabled={typePlanId === 0}
+                                onClick={handleClick}
+                            >Comprar plan</ButtonToggle>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }
