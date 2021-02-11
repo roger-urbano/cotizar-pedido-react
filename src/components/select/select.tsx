@@ -14,11 +14,11 @@ interface SelectProps {
     name: string;
     style?: any;
     ref?: ((instance: HTMLSelectElement | null) => void) | React.RefObject<HTMLSelectElement> | null | undefined
+
 }
 
-const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearance, onChange, name, style, ref }) => {
+const Select: React.FC<SelectProps> = React.forwardRef (({ label, id, value, data, field, appearance, onChange, name, style }, ref) => (
 
-    return (
       <div className="select--set">
         { label && (
             <Label for={name} className="select--label">
@@ -34,7 +34,7 @@ const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearan
             onChange={onChange}
             ref={ref}
           >
-            <option value="">Seleccione</option>
+            {/* <option value="">Doc</option> */}
             {data?.map((item, index) => (
               <option
                 key={index}
@@ -45,6 +45,7 @@ const Select: React.FC<SelectProps> = ({ label, id, value, data, field, appearan
             ))}
           </select>
       </div>
-    );
-}
+    )
+)
+
 export default Select

@@ -27,8 +27,7 @@ const Login = () => {
             formState 
         } = useForm({
             mode: "onChange"
-        });
-
+    });
 
     const onChangeValueInput = (event: any) => {
         const { id, value } = event.target;
@@ -57,19 +56,21 @@ const Login = () => {
                     <div className="grid--row">
                         <div className="grid--col-sm-12 mb-3">
                             <div className="document--set">
-                                <Select
-                                    id="type_document"
-                                    value={typeDocument}
-                                    name="type_document"
-                                    data={listDocument}
-                                    field="name"
-                                    onChange={onChangeValueInput}
-                                    style={{ width: '100px' }}
-                                    ref={register({
-                                        required: "*Requerido"
-                                    })}
-                                />
-                                { errors.type_document && <small className="text-danger pl-1 mt-1">{ errors.type_document.message }</small> }
+                                <div style={{ width: '130px' }}>
+                                    <Select
+                                        id="type_document"
+                                        value={typeDocument}
+                                        name="type_document"
+                                        data={listDocument}
+                                        field="name"
+                                        onChange={onChangeValueInput}
+                                        style={{ width: '100%' }}
+                                        ref={register({
+                                            required: "*Requerido"
+                                        })}
+                                    />
+                                    { errors.type_document && <small className="text-danger pl-1 mt-1">{ errors.type_document.message }</small> }
+                                </div>
                                 <div style={{ width: '100%' }}>
                                     <Input 
                                         label="Nro Documento"
@@ -78,7 +79,7 @@ const Login = () => {
                                         type="number"
                                         style={{ width: '100%'}}
                                         innerRef={register({
-                                            required: "El campo es requerido"
+                                            required: "*El campo es requerido"
                                         })}
                                     />
                                     { errors.nro_document && <small className="text-danger pl-1 mt-1">{ errors.nro_document.message }</small> }
@@ -93,7 +94,7 @@ const Login = () => {
                                 name="date"
                                 type="date"
                                 innerRef={register({
-                                    required: "El campo es requerido"
+                                    required: "*El campo es requerido"
                                 })}
                             />
                             { errors.date && <small className="text-danger pl-1 mt-1">{ errors.date.message }</small> }
@@ -105,7 +106,7 @@ const Login = () => {
                                 name="phone"
                                 type="number"
                                 innerRef={register({
-                                    required: "El campo es requerido"
+                                    required: "*El campo es requerido"
                                 })}
                             />
                             { errors.phone && <small className="text-danger pl-1 mt-1">{ errors.phone.message }</small> }
@@ -114,7 +115,7 @@ const Login = () => {
                             <FormGroup check>
                                 <Label check  className="label">
                                 <InputCheck type="checkbox" id="checkbox2" name="check_conditions" innerRef={register({
-                                    required: "El campo es requerido"
+                                    required: "*El campo es requerido"
                                 })} />
                                     Acepto la política de protección de datos personales y términos y condiciones
                                 </Label>
@@ -125,7 +126,7 @@ const Login = () => {
                             <FormGroup check>
                                 <Label check className="label" >
                                 <InputCheck type="checkbox" id="checkbox2" name="check_conditions2"  innerRef={register({
-                                    required: "El campo es requerido"
+                                    required: "*El campo es requerido"
                                 })}/>
                                     Acepto la Política de Envío de Comunicaciones Comerciales.
                                 </Label>
@@ -133,7 +134,7 @@ const Login = () => {
                             { errors.check_conditions2 && <small className="text-danger pl-1 mt-1">{ errors.check_conditions2.message }</small> }
                         </div>
                         <div className="grid--col-sm-12 mb-3 text-right">
-                         <ButtonToggle color="danger" type="submit" 
+                         <ButtonToggle color="danger" type="submit"
                         >Comencemos</ButtonToggle>
                         </div>
                     </div>

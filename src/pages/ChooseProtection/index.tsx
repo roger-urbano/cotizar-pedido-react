@@ -99,7 +99,7 @@ const ChooseProtection = () => {
                         <div className="grid--col-sm-12">
                             <div className="mb-3">
                                 <h6 className="mb-1">Revisa nuestros </h6>
-                                <span className="text-info">Servicios y Exclusiones</span> 
+                                <span className="text-danger">Servicios y Exclusiones</span> 
                             </div>
                             { dataServices.map((service, index) => (
                                 <ServicesList title={service.title} active={activeService === index} onActiveService={()=> onActiveService(index)}> {service.despription} </ServicesList> 
@@ -107,7 +107,7 @@ const ChooseProtection = () => {
                         </div>
                         <div className="grid--col-sm-12 mb-3 mt-5 d-flex justify-content-between">
                         <span className="text-secondary cursor-pointer">Enviar cotización por correo</span>
-                         <ButtonToggle color="primary" 
+                         <ButtonToggle color="danger" 
                             onClick={handleClick}
                         >Comprar plan</ButtonToggle>
                         </div>
