@@ -1,5 +1,5 @@
 import React from 'react';
-import imgShield from '../../assets/images/Illustration.png'
+import imgShield from '../../assets/images/shield.png'
 import HeartIcon from '../../assets/svgs/heart';
 import './plan-benefits.scss';
 

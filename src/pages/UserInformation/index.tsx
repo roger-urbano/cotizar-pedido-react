@@ -87,150 +87,153 @@ const UserInformation = () => {
     }
 
     return (
-        <div className="information">
-            <Steps
-                stepsTotal={5}
-                step={1}
-            />          
+        <div className="grid--col-xs-12 grid--col-sm-8">
 
-            <Title 
-                titleLight={"Hola"}
-                titleBold={firstName}
-                indication={"Valida que los datos sean correctos"}
-            />
-            <form onSubmit={handleSubmit(onSubmitForm)}>
-            <h6 className="padding-x-1">Datos personales del títular</h6>
-                <div className="grid--container">
-                    <div className="grid--row">
-                    <div className="grid--col-sm-12 mb-3">
-                        <div className="document--set">
-                            <Select
-                                id="type_document"
-                                value={typeDocument}
-                                name="type_document"
-                                data={listDocument}
-                                field="name"
-                                onChange={onChangeValueInput}
-                                style={{ width: '100px' }}
-                                ref={register({
-                                    required: "*Requerido"
-                                })}
-                            />
-                            <Input 
-                                label="Nro Documento"
-                                id="nro_document"
-                                name="nro_document"
-                                value={dataUser?.user?.document_number}
-                                type="text"
-                                style={{ width: '100%', color: 'red'}}
-                                innerRef={register({
-                                    required: "*El campo es requerido"
-                                })}
-                            />
-                        </div>
-                    </div>
+            <div className="information">
+                <Steps
+                    stepsTotal={5}
+                    step={1}
+                />          
 
-                        <div className="sm-column-12 mb-3">
-                            <Input 
-                                label="Nombre"
-                                id="first_name"
-                                name="first_name"
-                                value={dataUser?.user?.first_name}
-                                type="text"
-                                innerRef={register({
-                                    required: "*El campo es requerido"
-                                })}
-                            />
-                        </div>
-                        <div className="sm-column-12 mb-3">
-                            <Input 
-                                label="Apellido paterno"
-                                id="last_name"
-                                name="first_name"
-                                value={dataUser?.user?.last_name}
-                                type="text"
-                                innerRef={register({
-                                    required: "*El campo es requerido"
-                                })}
-                            />
-                        </div>
-                        <div className="sm-column-12 mb-3">
-                            <Input 
-                                label="Apellido materno"
-                                id="first_name"
-                                name="first_name"
-                                value={dataUser?.user?.sur_name}
-                                type="text"
-                                innerRef={register({
-                                    required: "*El campo es requerido"
-                                })}
-                            />
-                        </div>
+                <Title 
+                    titleLight={"Hola"}
+                    titleBold={firstName}
+                    indication={"Valida que los datos sean correctos"}
+                />
+                <form onSubmit={handleSubmit(onSubmitForm)}>
+                <h6 className="padding-x-1">Datos personales del títular</h6>
+                    <div className="grid--container">
+                        <div className="grid--row">
                         <div className="grid--col-sm-12 mb-3">
-                            <Input 
-                                label="Fecha de Nacimiento"
-                                id="date"
-                                name="date"
-                                value={moment(dataUser?.user?.date_birth).format("DD-MM-YYYY")}
-                                type="text"
-                                innerRef={register({
-                                    required: "*El campo es requerido"
-                                })}
-                            />
-                        </div>
-                        <div className="grid--col-sm-12 mb-3">
-                            <h6>Género</h6>
-                            <FormGroup check>
-                                <Label check className="label">
-                                    <InputCheck type="radio" name="radio1" 
-                                        checked={dataUser?.user?.gender === 1 ? true : false}
-                                        innerRef={register({
-                                            required: "*El campo es requerido"
-                                        })}
-                                        />
-                                    Masculino
-                                </Label>
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check className="label">
-                                    <InputCheck type="radio" name="radio1" checked={dataUser?.user?.gender === 2 ? true : false}
-                                        innerRef={register({
-                                            required: "*El campo es requerido"
-                                        })}
-                                    />
-                                    Femenino
-                                    </Label>
-                            </FormGroup>
-                        </div>
-                        <div className="grid--col-sm-12 mb-3">
-                            <h6>¿A quién vamos a asegurar?</h6>
-                            <FormGroup check>
-                                <Label check className="label">
-                                    <InputCheck type="radio" name="type_security" value="seguro personal"  onChange={onChangeSecurity}
-                                     innerRef={register({
-                                        required: true
-                                     })}/>
-                                    Sólo a mi
-                                </Label>
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check className="label">
-                                    <InputCheck type="radio" name="type_security" value="seguro familiar" onChange={onChangeSecurity}
+                            <div className="document--set">
+                                <Select
+                                    id="type_document"
+                                    value={typeDocument}
+                                    name="type_document"
+                                    data={listDocument}
+                                    field="name"
+                                    onChange={onChangeValueInput}
+                                    style={{ width: '100px' }}
+                                    ref={register({
+                                        required: "*Requerido"
+                                    })}
+                                />
+                                <Input 
+                                    label="Nro Documento"
+                                    id="nro_document"
+                                    name="nro_document"
+                                    value={dataUser?.user?.document_number}
+                                    type="text"
+                                    style={{ width: '100%', color: 'red'}}
                                     innerRef={register({
-                                        required: true
-                                     })}/>
-                                     A mi familia
-                                    </Label>
-                            </FormGroup>
-                            {  errors.type_security && <small className="text-danger pl-1 mt-1">"*El seguro es requerido"</small> }
+                                        required: "*El campo es requerido"
+                                    })}
+                                />
+                            </div>
                         </div>
-                        <div className="grid--col-sm-12 mb-3 text-right">
-                         <ButtonToggle color="danger" type="submit"
-                        >Continuar</ButtonToggle>
+
+                            <div className="sm-column-12 mb-3">
+                                <Input 
+                                    label="Nombre"
+                                    id="first_name"
+                                    name="first_name"
+                                    value={dataUser?.user?.first_name}
+                                    type="text"
+                                    innerRef={register({
+                                        required: "*El campo es requerido"
+                                    })}
+                                />
+                            </div>
+                            <div className="sm-column-12 mb-3">
+                                <Input 
+                                    label="Apellido paterno"
+                                    id="last_name"
+                                    name="first_name"
+                                    value={dataUser?.user?.last_name}
+                                    type="text"
+                                    innerRef={register({
+                                        required: "*El campo es requerido"
+                                    })}
+                                />
+                            </div>
+                            <div className="sm-column-12 mb-3">
+                                <Input 
+                                    label="Apellido materno"
+                                    id="first_name"
+                                    name="first_name"
+                                    value={dataUser?.user?.sur_name}
+                                    type="text"
+                                    innerRef={register({
+                                        required: "*El campo es requerido"
+                                    })}
+                                />
+                            </div>
+                            <div className="grid--col-sm-12 mb-3">
+                                <Input 
+                                    label="Fecha de Nacimiento"
+                                    id="date"
+                                    name="date"
+                                    value={moment(dataUser?.user?.date_birth).format("DD-MM-YYYY")}
+                                    type="text"
+                                    innerRef={register({
+                                        required: "*El campo es requerido"
+                                    })}
+                                />
+                            </div>
+                            <div className="grid--col-sm-12 mb-3">
+                                <h6>Género</h6>
+                                <FormGroup check>
+                                    <Label check className="label">
+                                        <InputCheck type="radio" name="radio1" 
+                                            checked={dataUser?.user?.gender === 1 ? true : false}
+                                            innerRef={register({
+                                                required: "*El campo es requerido"
+                                            })}
+                                            />
+                                        Masculino
+                                    </Label>
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Label check className="label">
+                                        <InputCheck type="radio" name="radio1" checked={dataUser?.user?.gender === 2 ? true : false}
+                                            innerRef={register({
+                                                required: "*El campo es requerido"
+                                            })}
+                                        />
+                                        Femenino
+                                        </Label>
+                                </FormGroup>
+                            </div>
+                            <div className="grid--col-sm-12 mb-3">
+                                <h6>¿A quién vamos a asegurar?</h6>
+                                <FormGroup check>
+                                    <Label check className="label">
+                                        <InputCheck type="radio" name="type_security" value="seguro personal"  onChange={onChangeSecurity}
+                                        innerRef={register({
+                                            required: true
+                                        })}/>
+                                        Sólo a mi
+                                    </Label>
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Label check className="label">
+                                        <InputCheck type="radio" name="type_security" value="seguro familiar" onChange={onChangeSecurity}
+                                        innerRef={register({
+                                            required: true
+                                        })}/>
+                                        A mi familia
+                                        </Label>
+                                </FormGroup>
+                                {  errors.type_security && <small className="text-danger pl-1 mt-1">"*El seguro es requerido"</small> }
+                            </div>
+                            <div className="grid--col-sm-12 mb-3 text-right">
+                            <ButtonToggle color="danger" type="submit"
+                            >Continuar</ButtonToggle>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }
