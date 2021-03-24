@@ -34,7 +34,7 @@ const Header = () => {
     ])
 
     return (
-        <div  className={`grid--col-xs-12  ${location.pathname === "/login" ? 'grid--col-sm-7' : 'grid--col-sm-4' }`}>
+        <div  className={`grid--col-xs-12 ${location.pathname === "/login" ? 'grid--col-sm-12 grid--col-md-7' : 'grid--col-sm-4 grid--col-xs-12' }`}>
             <div className="header">
                 <img  className="header--logo"src={imglogo} alt=""/>
                 { location.pathname === "/login" ? 

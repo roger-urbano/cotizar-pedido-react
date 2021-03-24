@@ -11,7 +11,7 @@ const Thankyou = () => {
         history.push("/login");
     }
     return (
-        <div className="grid--col-xs-12 grid--col-sm-9">
+        <div className="grid--col-xs-12 grid--col-sm-12 grid--col-md-9 padding-x-2">
             <div className="thankyou">
                 <div className="thankyou--content">
                     <Title 

@@ -101,3 +101,15 @@ $gap: 24px;
     padding-bottom: 80px;
     padding-right: 130px;
 }
+
+
+@media (max-width: 1140px) {
+    .wrap--forms {
+        padding-right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .wrap--forms {
+        padding-right: 0;
+    }
+}

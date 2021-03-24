@@ -87,7 +87,7 @@ const UserInformation = () => {
     }
 
     return (
-        <div className="grid--col-xs-12 grid--col-sm-8">
+        <div className="grid--col-xs-12 grid--col-sm-12 grid--col-md-8 padding-x-2">
 
             <div className="information">
                 <Steps
@@ -104,7 +104,7 @@ const UserInformation = () => {
                 <h6 className="padding-x-1">Datos personales del títular</h6>
                     <div className="grid--container">
                         <div className="grid--row">
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <div className="document--set">
                                 <Select
                                     id="type_document"
@@ -168,7 +168,7 @@ const UserInformation = () => {
                                     })}
                                 />
                             </div>
-                            <div className="grid--col-sm-12 mb-3">
+                            <div className="grid--col-xs-12 mb-3">
                                 <Input 
                                     label="Fecha de Nacimiento"
                                     id="date"
@@ -180,7 +180,7 @@ const UserInformation = () => {
                                     })}
                                 />
                             </div>
-                            <div className="grid--col-sm-12 mb-3">
+                            <div className="grid--col-xs-12 mb-3">
                                 <h6>Género</h6>
                                 <FormGroup check>
                                     <Label check className="label">
@@ -204,7 +204,7 @@ const UserInformation = () => {
                                         </Label>
                                 </FormGroup>
                             </div>
-                            <div className="grid--col-sm-12 mb-3">
+                            <div className="grid--col-xs-12 mb-3">
                                 <h6>¿A quién vamos a asegurar?</h6>
                                 <FormGroup check>
                                     <Label check className="label">
@@ -226,7 +226,7 @@ const UserInformation = () => {
                                 </FormGroup>
                                 {  errors.type_security && <small className="text-danger pl-1 mt-1">"*El seguro es requerido"</small> }
                             </div>
-                            <div className="grid--col-sm-12 mb-3 text-right">
+                            <div className="grid--col-xs-12 mb-3 text-right">
                             <ButtonToggle color="danger" type="submit"
                             >Continuar</ButtonToggle>
                             </div>

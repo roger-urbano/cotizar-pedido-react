@@ -54,7 +54,7 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmitForm)}>
                 <div className="grid--container">
                     <div className="grid--row">
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <div className="document--set">
                                 <div style={{ width: '130px' }}>
                                     <Select
@@ -87,7 +87,7 @@ const Login = () => {
                                 
                             </div>
                         </div>
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <Input 
                                 label="Fecha de Nacimiento"
                                 id="date"
@@ -99,7 +99,7 @@ const Login = () => {
                             />
                             { errors.date && <small className="text-danger pl-1 mt-1">{ errors.date.message }</small> }
                         </div>
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <Input 
                                 label="Celular"
                                 id="phone"
@@ -111,7 +111,7 @@ const Login = () => {
                             />
                             { errors.phone && <small className="text-danger pl-1 mt-1">{ errors.phone.message }</small> }
                         </div>
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <FormGroup check>
                                 <Label check  className="label">
                                 <InputCheck type="checkbox" id="checkbox2" name="check_conditions" innerRef={register({
@@ -122,7 +122,7 @@ const Login = () => {
                             </FormGroup>
                             { errors.check_conditions && <small className="text-danger pl-1 mt-1">{ errors.check_conditions.message }</small> }
                         </div>
-                        <div className="grid--col-sm-12 mb-3">
+                        <div className="grid--col-xs-12 mb-3">
                             <FormGroup check>
                                 <Label check className="label" >
                                 <InputCheck type="checkbox" id="checkbox2" name="check_conditions2"  innerRef={register({
@@ -133,7 +133,7 @@ const Login = () => {
                             </FormGroup>
                             { errors.check_conditions2 && <small className="text-danger pl-1 mt-1">{ errors.check_conditions2.message }</small> }
                         </div>
-                        <div className="grid--col-sm-12 mb-3 text-right">
+                        <div className="grid--col-xs-12 mb-3 text-right">
                          <ButtonToggle color="danger" type="submit"
                         >Comencemos</ButtonToggle>
                         </div>

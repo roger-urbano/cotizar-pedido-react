@@ -7,10 +7,11 @@ import './plan-benefits.scss';
 interface PlanBenefitsProps {
     listBenefits?: [];
     typePlanId: number;
+    priceCoberture: number;
     typePlan: string;
 }
 
-const PlanBenefits: React.FC<PlanBenefitsProps> = ({ listBenefits, typePlanId, typePlan }) => {
+const PlanBenefits: React.FC<PlanBenefitsProps> = ({ listBenefits, typePlanId, priceCoberture, typePlan }) => {
 
     const typePlanUp = typePlan.toUpperCase();
 
@@ -25,7 +26,7 @@ const PlanBenefits: React.FC<PlanBenefitsProps> = ({ listBenefits, typePlanId, t
             <div className="benefits--info">
                 <div className="benefits--coberture">
                     <small>Cobertura máxima</small>
-                    <h5>S/1MM</h5>
+                    <h5>S/ {priceCoberture}MM</h5>
                     <span className="badge badge-success px-2" style={ boldText }>{`PLAN ${typePlanUp ? typePlanUp :'BÁSICO'}`}</span>
                 </div>
                 <figure className="benefits--figure">
